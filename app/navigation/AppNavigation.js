@@ -11,21 +11,21 @@ import PersonIcon from '../components/Icons/PersonIcon';
 //import HeaderInput from '../containers/HeaderInput';
 //import enumerator from '../lib/enumerator';
 const ActivityNav = StackNavigator(
-  {
-    ActivityList: {
-      screen: ActivityListScreen,
-      navigationOptions: {
-        header: null
-      }
-    },
-    // ActivitySearched: {
-    //   screen: ActivitySearchedScreen,
-    //   navigationOptions: ({ navigation }) => ({
-    //     title: `${enumerator.typeTitle[navigation.state.params.type]}`,
-    //     headerRight: <HeaderInput type={navigation.state.params.type} />
-    //   })
-    // }
-  }
+    {
+        ActivityList: {
+            screen: ActivityListScreen,
+            navigationOptions: {
+                header: null
+            }
+        },
+        // ActivitySearched: {
+        //   screen: ActivitySearchedScreen,
+        //   navigationOptions: ({ navigation }) => ({
+        //     title: `${enumerator.typeTitle[navigation.state.params.type]}`,
+        //     headerRight: <HeaderInput type={navigation.state.params.type} />
+        //   })
+        // }
+    }
 )
 
 const PrimaryNav = TabNavigator(
@@ -86,7 +86,7 @@ const AccountNav = StackNavigator(
         // },
         Main: {
             screen: PrimaryNav
-        }
+        },
     },
     {
         headerMode: 'none'
