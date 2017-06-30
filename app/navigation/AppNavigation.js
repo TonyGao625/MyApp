@@ -1,5 +1,5 @@
 import { StackNavigator, TabNavigator } from 'react-navigation'
-//import ActivityListScreen from '../screens/ActivityListScreen'
+import ActivityListScreen from '../screens/ActivityListScreen'
 //import ActivitySearchedScreen from '../screens/ActivitySearchedScreen'
 import AccountScreen from '../screens/AccountScreen'
 import MessageScreen from '../screens/MessageScreen'
@@ -10,20 +10,37 @@ import BubbleChatIcon from '../components/Icons/BubbleChatIcon';
 import PersonIcon from '../components/Icons/PersonIcon';
 //import HeaderInput from '../containers/HeaderInput';
 //import enumerator from '../lib/enumerator';
+const ActivityNav = StackNavigator(
+  {
+    ActivityList: {
+      screen: ActivityListScreen,
+      navigationOptions: {
+        header: null
+      }
+    },
+    // ActivitySearched: {
+    //   screen: ActivitySearchedScreen,
+    //   navigationOptions: ({ navigation }) => ({
+    //     title: `${enumerator.typeTitle[navigation.state.params.type]}`,
+    //     headerRight: <HeaderInput type={navigation.state.params.type} />
+    //   })
+    // }
+  }
+)
 
 const PrimaryNav = TabNavigator(
     {
-        // Activity: {
-        //     screen: ActivityNav,
-        //     navigationOptions: {
-        //         tabBarLabel: '活动',
-        //         tabBarIcon: ({ tintColor }) => {
-        //             return (
-        //                 <ToyIcon color={tintColor} />
-        //             )
-        //         },
-        //     }
-        // },
+        Activity: {
+            screen: ActivityNav,
+            navigationOptions: {
+                tabBarLabel: '活动',
+                tabBarIcon: ({ tintColor }) => {
+                    return (
+                        <ToyIcon color={tintColor} />
+                    )
+                },
+            }
+        },
         Message: {
             screen: MessageScreen,
             navigationOptions: {
@@ -48,7 +65,7 @@ const PrimaryNav = TabNavigator(
     },
     {
         tabBarPosition: 'bottom',
-        initialRouteName: 'Message',
+        initialRouteName: 'Activity',
         tabBarOptions: {
             activeTintColor: '#03A9F4',
             inactiveTintColor: '#66757f',
